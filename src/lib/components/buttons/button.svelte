@@ -1,26 +1,17 @@
 <script lang="ts">
 	import Spinner from '$lib/components/feedback/spinner.svelte';
+	import type { Color, Size, Variant, Radius } from '$lib/types.js';
 	import type { Snippet } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
 	interface Props extends HTMLButtonAttributes {
-		size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-		variant?: 'solid' | 'surface' | 'outline' | 'ghost' | 'plain';
-		color?:
-			| 'gray'
-			| 'red'
-			| 'green'
-			| 'blue'
-			| 'teal'
-			| 'pink'
-			| 'purple'
-			| 'cyan'
-			| 'orange'
-			| 'yellow';
+		size?: Size;
+		variant?: Variant;
+		color?: Color;
 		disabled?: boolean;
 		loading?: boolean;
 		spinnerPlacement?: 'start' | 'end';
-		radius?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full';
+		radius?: Radius;
 		children: Snippet;
 	}
 
@@ -77,6 +68,7 @@
 		border: none;
 		cursor: pointer;
 		font-weight: 500;
+		line-height: 1;
 		transition: all 0.2s ease;
 		display: inline-flex;
 		align-items: center;
@@ -94,6 +86,10 @@
 	.button:focus-visible {
 		outline: 2px solid #3b82f6;
 		outline-offset: 2px;
+	}
+
+	.button:active:not(:disabled) {
+		transform: scale(0.97);
 	}
 
 	/* Sizes */

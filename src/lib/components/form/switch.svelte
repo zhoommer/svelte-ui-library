@@ -66,7 +66,7 @@
 		<span
 			class="switch-thumb"
 			style="width: {thumbSizes[size]}; height: {thumbSizes[size]};
-			       transform: translateX({checked ? `calc(${trackSizes[size].width} - ${thumbSizes[size]} - 2px)` : '2px'});"
+			       transform: translateX({checked ? `calc(${trackSizes[size].width} - ${thumbSizes[size]} - 2px)` : '2px'}) translateY(-50%);"
 		></span>
 	</button>
 
@@ -109,15 +109,10 @@
 	.switch-thumb {
 		position: absolute;
 		top: 50%;
-		transform-origin: center;
-		transform: translateX(2px) translateY(-50%);
 		background: white;
 		border-radius: 50%;
 		box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
 		transition: transform 0.2s ease;
-		/* Override translateX while keeping translateY(-50%) */
-		top: 50%;
-		margin-top: 0;
 	}
 
 	.switch-label-text {

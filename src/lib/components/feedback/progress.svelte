@@ -42,7 +42,7 @@
 	const clampedValue = $derived(Math.min(100, Math.max(0, value ?? 0)));
 </script>
 
-<div class="progress-wrapper {className || ''}" {...restProps}>
+<div class="progress-wrapper {className || ''}" aria-live="polite" {...restProps}>
 	<div
 		class="progress-track"
 		role="progressbar"

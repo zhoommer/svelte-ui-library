@@ -28,14 +28,6 @@
 		...restProps
 	}: Props = $props();
 
-	const sizeMap: Record<Size, { padding: string; fontSize: string; height: string }> = {
-		xs: { padding: '4px 8px', fontSize: '12px', height: '28px' },
-		sm: { padding: '5px 10px', fontSize: '14px', height: '32px' },
-		md: { padding: '7px 12px', fontSize: '14px', height: '38px' },
-		lg: { padding: '9px 14px', fontSize: '16px', height: '44px' },
-		xl: { padding: '11px 16px', fontSize: '18px', height: '52px' }
-	};
-
 	const hasError = $derived(!!error);
 	const errorId = `error-${Math.random().toString(36).slice(2)}`;
 </script>
@@ -50,8 +42,6 @@
 		{disabled}
 		{readonly}
 		class="input input-{variant} input-{variant}-{color} input-{size} {hasError ? 'input-error' : ''} {className || ''}"
-		style="padding: {sizeMap[size].padding}; font-size: {sizeMap[size].fontSize}; height: {sizeMap[size].height};
-		       {prefix ? 'padding-left: 36px;' : ''} {suffix ? 'padding-right: 36px;' : ''}"
 		aria-invalid={hasError || undefined}
 		aria-describedby={typeof error === 'string' ? errorId : undefined}
 		{...restProps}
@@ -86,6 +76,17 @@
 	.input::placeholder { color: #9ca3af; }
 
 	.input:disabled { opacity: 0.5; cursor: not-allowed; background: #f9fafb; }
+
+	/* Sizes */
+	.input-xs { padding: 4px 8px;   font-size: 12px; height: 28px; }
+	.input-sm { padding: 5px 10px;  font-size: 14px; height: 32px; }
+	.input-md { padding: 7px 12px;  font-size: 14px; height: 38px; }
+	.input-lg { padding: 9px 14px;  font-size: 16px; height: 44px; }
+	.input-xl { padding: 11px 16px; font-size: 18px; height: 52px; }
+
+	/* Adjust padding when prefix/suffix present */
+	.has-prefix .input { padding-left: 36px; }
+	.has-suffix .input { padding-right: 36px; }
 
 	/* Outline variant */
 	.input-outline { border: 1px solid #d1d5db; }

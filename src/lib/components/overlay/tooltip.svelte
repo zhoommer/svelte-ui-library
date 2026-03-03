@@ -54,7 +54,7 @@
 			id={tooltipId}
 			role="tooltip"
 			class="tooltip tooltip-{placement}"
-		>{label}</span>
+		><span class="tooltip-inner">{label}</span></span>
 	{/if}
 </span>
 
@@ -66,14 +66,18 @@
 
 	.tooltip {
 		position: absolute;
+		z-index: 1070;
+		pointer-events: none;
+	}
+
+	.tooltip-inner {
+		display: block;
 		background: #1f2937;
 		color: white;
 		font-size: 12px;
 		padding: 5px 10px;
 		border-radius: 6px;
 		white-space: nowrap;
-		z-index: 1070;
-		pointer-events: none;
 		animation: tooltip-in 0.1s ease;
 	}
 
