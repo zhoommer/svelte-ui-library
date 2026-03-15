@@ -32,6 +32,7 @@ export const nav: NavSection[] = [
 		title: 'Form',
 		items: [
 			{ title: 'Inputs', href: '/docs/components/form' },
+			{ title: 'Combobox', href: '/docs/components/combobox' },
 			{ title: 'Checkbox & Radio', href: '/docs/components/checkbox-radio' },
 			{ title: 'Form Field', href: '/docs/components/form-field' }
 		]
