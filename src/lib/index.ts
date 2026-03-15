@@ -28,6 +28,8 @@ export { default as Container } from '$lib/components/layout/container.svelte';
 export { default as Card } from '$lib/components/layout/card.svelte';
 
 // Form
+export { default as Combobox } from '$lib/components/form/combobox.svelte';
+export type { ComboboxOption } from '$lib/components/form/combobox.svelte';
 export { default as Label } from '$lib/components/form/label.svelte';
 export { default as Input } from '$lib/components/form/input.svelte';
 export { default as Textarea } from '$lib/components/form/textarea.svelte';
@@ -62,6 +64,7 @@ export { default as Tag } from '$lib/components/data/tag.svelte';
 export { default as Accordion } from '$lib/components/data/accordion.svelte';
 export { default as AccordionItem } from '$lib/components/data/accordion-item.svelte';
 export { default as Table } from '$lib/components/data/table.svelte';
+export { default as VirtualList } from '$lib/components/data/virtual-list.svelte';
 
 // Stores
 export { toast } from '$lib/stores/toast.js';
