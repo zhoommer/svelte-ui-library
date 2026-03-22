@@ -65,6 +65,16 @@ export { default as Accordion } from '$lib/components/data/accordion.svelte';
 export { default as AccordionItem } from '$lib/components/data/accordion-item.svelte';
 export { default as Table } from '$lib/components/data/table.svelte';
 export { default as VirtualList } from '$lib/components/data/virtual-list.svelte';
+export { default as DataTable } from '$lib/components/data/data-table.svelte';
+export type {
+	ColumnDef,
+	CellContext,
+	SortState,
+	SortDirection,
+	FilterState,
+	PaginationState,
+	DataTableProps
+} from '$lib/components/data/data-table.types.js';
 
 // Stores
 export { toast } from '$lib/stores/toast.js';

@@ -60,7 +60,8 @@ export const nav: NavSection[] = [
 		items: [
 			{ title: 'Avatar', href: '/docs/components/avatar' },
 			{ title: 'Accordion', href: '/docs/components/accordion' },
-			{ title: 'Table', href: '/docs/components/table' }
+			{ title: 'Table', href: '/docs/components/table' },
+			{ title: 'DataTable', href: '/docs/components/data-table' }
 		]
 	}
 ];
